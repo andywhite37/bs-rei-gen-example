@@ -1,0 +1,19 @@
+{
+  "name": "my-project",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bsb -make-world",
+    "clean": "bsb -clean-world",
+    "watch": "bsb -make-world -w",
+    "test": "npm run build && node src/Main.bs.js",
+    "genrei": "(rm src/*.rei || true) && npm run clean && npm run build && bsc -bs-re-out lib/bs/src/Classes.cmi > src/Classes.rei && bsc -bs-re-out lib/bs/src/Instances.cmi > src/Instances.rei && bsc -bs-re-out && bsc -bs-re-out lib/bs/src/Main.cmi > src/Main.rei"
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-platform": "^5.0.4"
+  }
+}
